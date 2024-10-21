@@ -1,0 +1,297 @@
+---
+import List from 'phosphor-astro/List.astro';
+import X from 'phosphor-astro/X.astro';
+import LinkFlip from "../components/LinkFlip.astro";
+import Image from 'astro/components/Image.astro';
+
+import EyeFlower from '../images/eyeflower.png'
+---
+
+<header>
+  <nav class="nav container-grid">
+      <div class="nav--name">
+        <a href="/">JEFFREY HERRERA</a>
+      </div>
+      <div class="nav--title">
+        <p>CREATIVE DIRECTOR</p>
+      </div>
+      <div class="nav--location">
+        <p>NEW YORK, NY / <span id="nycTime">Loading...</span></p>
+      </div>
+      <div class="nav--menu">
+        <div class="nav--menu-button">
+          <span><List /> MENU</span>
+          <span><List /> MENU</span>
+        </div>
+      </div>
+  </nav>
+</header>
+
+<div class="nav--dropdown container-grid">
+  <div class="nav--dropdown-image">
+    <Image src={EyeFlower} alt="An irridescent flower with an eyeball in the center" loading="eager" />
+  </div>
+  <div class="menu-nav container-grid">
+    <div class="nav--name">
+      <a href="/">JEFFREY HERRERA</a>
+    </div>
+    <div class="nav--title">
+      <p>CREATIVE DIRECTOR</p>
+    </div>
+    <div class="nav--location">
+      <p>NEW YORK, NY</p>
+    </div>
+    <div class="nav--menu">
+      <div class="nav--menu-button close">
+        <span><X />CLOSE</span>
+        <span><X />CLOSE</span>
+      </div>
+    </div>    
+  </div>
+  <div class="submenu container-grid">
+    <ul class="submenu--social">
+      <li>
+        <LinkFlip linkurl="https://www.instagram.com/_isthatjeff" linkname="Instagram ↗" className='link submenu--social-link' target="_blank" />
+      </li>
+      <li>
+        <LinkFlip linkurl="https://www.linkedin.com/in/jeffrey-herrera" linkname="LinkedIn ↗" className='link submenu--social-link' /></li>
+      <li>
+        <LinkFlip linkurl="mailto:herrera.jeffrey@gmail.com" linkname="Email ↗" className='link submenu--social-link' />
+      </li>
+    </ul>
+    <ul class="submenu--main">
+      <li><a href="/">work</a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="#">playlists</a></li>
+      <li><a href="#">playground</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: var(--clr-stone-950);
+    transition: var(--transition);
+  }
+  .nav, .menu-nav {
+    padding-block: 1rem;
+    font-family: "Fraktion Mono", 'Courier New', Courier, monospace;
+    font-size: 12px;
+		letter-spacing: -0.3px;
+    font-weight: bold;
+    color: var(--clr-stone-50);
+  }
+
+  /* MENU BUTTON */
+  
+  .nav--menu-button {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    overflow: hidden;
+  }
+  .nav--menu-button:hover {
+    cursor: pointer;
+  }
+  .nav--menu-button a span {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .nav--menu-button a span svg {
+    transform: translateY(-1px);
+  }
+  .nav--menu-button:hover span {
+    transition: var(--transition);
+    transform: translateY(-20px);
+  }
+  .nav--menu-button svg, .astronav-close-icon svg {
+    width: 14px;
+    display: inline;
+    position: relative;
+    top: 3px;
+  }
+  .nav .open .nav--menu-button div {
+    transform: translateY(0px);
+  }
+
+  /* MENU DROPDOWN */
+
+  .menu-nav {
+    grid-column: 1/13;
+    padding-inline: 0;
+    color: var(--clr-stone-950);
+  }
+  .menu-nav .nav--name a {
+    color: var(--clr-stone-950);
+  }
+  .nav--dropdown {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    padding-bottom: 4rem;
+    width: 100%;
+    border-bottom-left-radius: 1.5rem;
+    background: radial-gradient(153.92% 111.44% at 82.55% 100%, #D18BCB 0%, #F8707F 18.3%, #FD884E 36.99%, #FCAC33 61.08%, #EDC169 100%);
+    overflow: hidden;
+    transition: var(--transition);
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  }
+  .nav--dropdown-image {
+    position: absolute;
+    left: -3%;
+    top: 2rem;
+    width: 600px;
+    pointer-events: none;
+    z-index: -10;
+  }
+  .submenu {
+    grid-column: 1/13;
+    padding-inline: 0;
+    margin-top: 1rem;
+  }
+  .submenu--social {
+    font-family: "Fraktion Mono", 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    font-size: 12px;
+		letter-spacing: -0.3px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.25rem;
+    grid-column: 5/9;
+  }
+  .submenu--social li {
+    margin-bottom: 1rem;
+  }
+  .submenu--social-link {
+    text-decoration: none;
+    color: var(--clr-stone-50);
+    font-weight: bold !important;
+  }
+  .submenu--main {
+    list-style: none;
+    padding-left: 0;
+    grid-column: 9/13;
+  }
+  .submenu--main a {
+    font-family: 'Eiko', 'Times New Roman', Times, serif;
+    font-size: 3.1875rem;
+		letter-spacing: -1.02px;
+    text-decoration: none;
+    color: var(--clr-stone-50);
+    cursor: pointer;
+  }
+  .submenu--main a:hover {
+    color: var(--clr-stone-700);
+    transition: var(--transition);
+  }
+
+  /* GRID */
+  
+  .nav--name {
+    grid-column: 1/5;
+    opacity: .5;
+  }
+  .nav--name a, .nav--menu a {
+    text-decoration: none;
+    color: var(--clr-stone-50);
+  }
+  .nav--title {
+    opacity: .5;
+    grid-column: 5/9;
+  }
+  .nav--location {
+    opacity: .5;
+    grid-column: 9/12;
+  }
+  .nav--menu {
+    justify-self: end;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let tl = gsap.timeline({ paused: true});
+
+    tl.to(".nav--dropdown", {
+      duration: 0.4,
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      ease: "power1.inOut"
+    });
+
+    tl.from(".submenu--social-link, .submenu--main a", {
+      opacity: 0,
+      y: 60,
+      stagger: 0.1,
+      duration: 0.75,
+      ease: "power2.inOut",
+    },
+    "<",
+    ); 
+
+    tl.to(".nav--dropdown-image", {
+      duration: 1,
+      y: 60,
+      ease: "power2.out"
+    },
+    "<",
+    );
+
+    function openMenu() {
+    document.querySelector(".nav--dropdown").style.pointerEvents = "all";
+    tl.play();
+
+    // Add a click event listener to close the menu when clicking outside
+    document.addEventListener("click", outsideClickListener);
+    }
+
+    function closeMenu() {
+        document.querySelector(".nav--dropdown").style.pointerEvents = "none";
+        tl.reverse();
+
+        // Remove the click event listener when the menu is closed
+        document.removeEventListener("click", outsideClickListener);
+    }
+
+    // Function to check if the click is outside the menu
+    function outsideClickListener(event) {
+        const navDropdown = document.querySelector(".nav--dropdown");
+        const menuButton = document.querySelector(".nav--menu-button");
+
+        // Check if the click target is not inside the dropdown or the menu button
+        if (!navDropdown.contains(event.target) && !menuButton.contains(event.target)) {
+            closeMenu(); // Close the menu
+        }
+    }
+
+    document.querySelector(".nav--menu-button").addEventListener("click", openMenu);
+    document.querySelector(".close").addEventListener("click", closeMenu);
+    tl.reverse();
+
+    function updateNYCTime() {
+            // Get current time in UTC
+            const now = new Date();
+
+            // Convert UTC time to Eastern Time (ET)
+            const options = {
+                timeZone: 'America/New_York',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const nycTime = now.toLocaleTimeString('en-US', options);
+
+            // Display the time
+            document.getElementById('nycTime').textContent = nycTime;
+        }
+
+        // Update time every second
+        setInterval(updateNYCTime, 1000);
+  });
+</script>

@@ -1,0 +1,39 @@
+---
+interface Props {
+	linkurl: string;
+	linkname: string;
+  className: string;
+  external?: boolean;
+}
+
+const { linkurl, linkname, className, external = true, ...rest} = Astro.props;
+---
+
+<a href={linkurl} class={className} {...rest} target={external === true ? '_blank' : '_self'} rel={external === true ? 'noreferrer' : undefined}>
+  <span>{linkname}</span>
+  <span>{linkname}</span>
+</a>
+
+<style>
+  .link {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--clr-stone-950);
+    cursor: pointer;
+  }
+  .link:hover {
+    cursor: pointer;
+  }
+  .link span {
+    transition: var(--transition);
+  }
+  .link:hover span:first-of-type {
+    transform: translateY(-20px);
+  }
+  .link:hover span:last-of-type {
+    transform: translateY(-20px);
+  }
+</style>
