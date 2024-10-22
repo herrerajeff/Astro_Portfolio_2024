@@ -10,7 +10,7 @@ import EyeFlower from '../images/eyeflower.png'
 <header>
   <nav class="nav container-grid">
       <div class="nav--name">
-        <a href="/">JEFFREY HERRERA</a>
+        <LinkFlip linkname='JEFFREY HERRERA' linkurl='/' />
       </div>
       <div class="nav--title">
         <p>CREATIVE DIRECTOR</p>
@@ -20,8 +20,7 @@ import EyeFlower from '../images/eyeflower.png'
       </div>
       <div class="nav--menu">
         <div class="nav--menu-button">
-          <span><List /> MENU</span>
-          <span><List /> MENU</span>
+          <LinkFlip className='link menu-button' isButton><List /> MENU</LinkFlip>
         </div>
       </div>
   </nav>
@@ -33,7 +32,7 @@ import EyeFlower from '../images/eyeflower.png'
   </div>
   <div class="menu-nav container-grid">
     <div class="nav--name">
-      <a href="/">JEFFREY HERRERA</a>
+      <LinkFlip linkname='JEFFREY HERRERA' linkurl='/' />
     </div>
     <div class="nav--title">
       <p>CREATIVE DIRECTOR</p>
@@ -42,21 +41,18 @@ import EyeFlower from '../images/eyeflower.png'
       <p>NEW YORK, NY</p>
     </div>
     <div class="nav--menu">
-      <div class="nav--menu-button close">
-        <span><X />CLOSE</span>
-        <span><X />CLOSE</span>
-      </div>
+      <LinkFlip className='link close' isButton><X /> CLOSE</LinkFlip>
     </div>    
   </div>
   <div class="submenu container-grid">
     <ul class="submenu--social">
       <li>
-        <LinkFlip linkurl="https://www.instagram.com/_isthatjeff" linkname="Instagram ↗" className='link submenu--social-link' target="_blank" />
+        <LinkFlip linkurl="https://www.instagram.com/_isthatjeff" linkname="Instagram ↗" className='submenu--social-link' external />
       </li>
       <li>
-        <LinkFlip linkurl="https://www.linkedin.com/in/jeffrey-herrera" linkname="LinkedIn ↗" className='link submenu--social-link' /></li>
+        <LinkFlip linkurl="https://www.linkedin.com/in/jeffrey-herrera" linkname="LinkedIn ↗" className='submenu--social-link' external /></li>
       <li>
-        <LinkFlip linkurl="mailto:herrera.jeffrey@gmail.com" linkname="Email ↗" className='link submenu--social-link' />
+        <LinkFlip linkurl="mailto:herrera.jeffrey@gmail.com" linkname="Email ↗" className='submenu--social-link' external />
       </li>
     </ul>
     <ul class="submenu--main">
@@ -88,36 +84,9 @@ import EyeFlower from '../images/eyeflower.png'
   }
 
   /* MENU BUTTON */
-  
-  .nav--menu-button {
-    all: unset;
-    display: flex;
-    flex-direction: column;
-    height: 20px;
-    overflow: hidden;
-  }
-  .nav--menu-button:hover {
-    cursor: pointer;
-  }
-  .nav--menu-button a span {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .nav--menu-button a span svg {
-    transform: translateY(-1px);
-  }
-  .nav--menu-button:hover span {
-    transition: var(--transition);
-    transform: translateY(-20px);
-  }
-  .nav--menu-button svg, .astronav-close-icon svg {
-    width: 14px;
-    display: inline;
-    position: relative;
-    top: 3px;
-  }
-  .nav .open .nav--menu-button div {
-    transform: translateY(0px);
+
+  .menu-button {
+    color: var(--clr-stone-50);
   }
 
   /* MENU DROPDOWN */
@@ -136,7 +105,8 @@ import EyeFlower from '../images/eyeflower.png'
     z-index: 100;
     padding-bottom: 4rem;
     width: 100%;
-    border-bottom-left-radius: 1.5rem;
+    border-bottom-left-radius: var(--space);
+    border-bottom-right-radius: var(--space);
     background: radial-gradient(153.92% 111.44% at 82.55% 100%, #D18BCB 0%, #F8707F 18.3%, #FD884E 36.99%, #FCAC33 61.08%, #EDC169 100%);
     overflow: hidden;
     transition: var(--transition);
@@ -204,10 +174,18 @@ import EyeFlower from '../images/eyeflower.png'
   .nav--title {
     opacity: .5;
     grid-column: 5/9;
+    display: flex;
+    align-items: center;
+    height: 30px;
+		white-space: nowrap;
   }
   .nav--location {
     opacity: .5;
     grid-column: 9/12;
+    display: flex;
+    align-items: center;
+    height: 30px;
+		white-space: nowrap;
   }
   .nav--menu {
     justify-self: end;

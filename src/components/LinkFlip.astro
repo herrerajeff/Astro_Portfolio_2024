@@ -1,39 +1,95 @@
 ---
 interface Props {
-	linkurl: string;
-	linkname: string;
-  className: string;
+  linkurl?: string;
+  linkname?: string;
+  className?: string;
   external?: boolean;
+  isButton?: boolean;
 }
 
-const { linkurl, linkname, className, external = true, ...rest} = Astro.props;
+const { linkurl = '#', linkname = '', className = '', external = true, isButton = false, ...rest } = Astro.props;
 ---
 
-<a href={linkurl} class={className} {...rest} target={external === true ? '_blank' : '_self'} rel={external === true ? 'noreferrer' : undefined}>
-  <span>{linkname}</span>
-  <span>{linkname}</span>
-</a>
+{isButton ? (
+  <button
+    class={`link ${className}`}
+    type="button"
+    {...rest}
+  >
+    <div class="mask">
+      <div class="link-container">
+        <span class="link-name link-name-1">{linkname}<slot /></span>
+        <span class="link-name link-name-2">{linkname}<slot /></span>
+      </div>
+    </div>
+  </button>
+) : (
+  <a
+    href={linkurl}
+    class={`link ${className}`}
+    target={external ? '_blank' : '_self'}
+    rel={external ? 'noopener noreferrer' : undefined}
+    {...rest}
+  >
+    <div class="mask">
+      <div class="link-container">
+        <span class="link-name link-name-1">{linkname}<slot /></span>
+        <span class="link-name link-name-2">{linkname}<slot /></span>
+      </div>
+    </div>
+  </a>
+)}
 
 <style>
   .link {
-    display: flex;
-    flex-direction: column;
-    height: 20px;
-    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
     text-decoration: none;
+		white-space: nowrap;
     color: var(--clr-stone-950);
     cursor: pointer;
   }
-  .link:hover {
-    cursor: pointer;
+  .mask {
+    position: relative;
+    padding: 0;
+    height: 20px;
+    overflow: hidden;
   }
-  .link span {
-    transition: var(--transition);
+  .link-container {
+    transition: transform 0.4s ease;
   }
-  .link:hover span:first-of-type {
+  .link-name {
+    line-height: 20px;
+    display: flex;
+    gap: 2px;
+    transition: transform 0.4s ease;
+  }
+  .link-name-1 {
+    transform-origin: right center;
+  }
+  .link-name-2 {
+    transform-origin: left center;
+    transform: rotate(30deg);
+  }
+  .link:hover .link-container {
     transform: translateY(-20px);
   }
-  .link:hover span:last-of-type {
-    transform: translateY(-20px);
+  .link:hover .link-name-1 {
+    transform: rotate(30deg);
+  }
+  .link:hover .link-name-2 {
+    transform: rotate(0deg);
+  }
+  .link-name svg {
+    width: 20px;
+		display: inline-block;
+  }
+  /* Additional styles for button to remove default styling */
+  button.link {
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
   }
 </style>

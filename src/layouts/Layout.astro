@@ -123,6 +123,7 @@ import Nav from "../components/Nav.astro";
 		--clr-stone-900: #1c1917;
 		--clr-stone-950: #0c0a09;
 		--transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+		--space: 1.5rem;
 	}
 
 	/* RESET */
@@ -136,6 +137,9 @@ import Nav from "../components/Nav.astro";
 		body {
 			line-height: 1.5;
 			-webkit-font-smoothing: antialiased;
+		}
+		svg {
+			width: 20px;
 		}
 		img, picture, video, canvas, svg {
 			display: block;
@@ -227,13 +231,13 @@ import Nav from "../components/Nav.astro";
 	}
 
 	.container {
-		padding-inline: 1.5rem;
+		padding-inline: var(--space);
 	}
 
 	.container-grid {
-		padding-inline: 1.5rem;
+		padding-inline: var(--space);
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		gap: 1.5rem;
+		gap: var(--space);
 	}
 </style>
