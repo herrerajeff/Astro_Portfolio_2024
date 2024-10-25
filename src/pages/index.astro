@@ -12,43 +12,43 @@ import LinkFlip from '../components/LinkFlip.astro';
 ---
 
 <Layout title="Jeff Herrera">
-	<div class="container hero--container">
-		<div class="headline">
-			<span>I'm Jeff,</span>
-			<div class="hero--pill about"><Picture src={Portrait} width="300" alt="Portrait of Jeffrey Herrera" loading="eager" /></div>
-			<span>a creative director from</span>
-			<span class="hero--pill nyc">
-				<svg xmlns="http://www.w3.org/2000/svg" width="101" height="62" fill="currentColor" viewBox="0 0 101 62">
-					<path fill-rule="evenodd" d="M26.995 1.206 23.629.918l-.16.898c-.088.49-.25.88-.459 1.128-.178.213-.416.358-.825.358-.303 0-.659-.102-1.127-.335-.375-.187-.752-.42-1.192-.69-.123-.076-.25-.155-.384-.236C18.314 1.33 16.815.488 14.919.488c-1.927 0-3.33.884-4.254 2.162-.895 1.236-1.329 2.811-1.486 4.275l-.11 1.01 3.198.291.244-.763c.151-.471.327-.825.535-1.052.176-.191.387-.311.739-.311.344 0 .736.11 1.228.347.426.206.859.47 1.358.774l.265.162c1.165.707 2.655 1.573 4.457 1.573 1.99 0 3.433-.966 4.369-2.307.91-1.304 1.344-2.953 1.458-4.455l.075-.988Z" clip-rule="evenodd"/>
-					<path d="m100.6 35.362-4.793-1.268-.234 1.002c-.35 1.496-1.17 3.475-2.578 5.06-1.388 1.563-3.334 2.736-6.025 2.736-2.332 0-4.19-.977-5.51-2.988-1.357-2.065-2.183-5.287-2.183-9.788 0-5.98.82-9.62 2.134-11.743.642-1.04 1.4-1.711 2.252-2.132.86-.426 1.873-.623 3.056-.623 3.2 0 6.55 2.6 8.974 5.968l.507.705 3.343-1.752-3.883-9.357h-2.92l-.99.957c-1.076-.594-2.92-1.293-5.746-1.293-4.787 0-8.639 2.038-11.267 5.474-2.609 3.41-3.97 8.137-3.97 13.502 0 5.875 1.777 10.353 4.69 13.368 2.911 3.013 6.87 4.474 11.052 4.474 4.337 0 7.53-1.553 9.781-3.787 2.23-2.212 3.488-5.043 4.085-7.567l.225-.948ZM72.79 15.196V11.56H58.61v3.818l.782.174c.505.112 1.354.377 2.051.781.76.442.988.835.988 1.1 0 .108-.033.284-.137.5l-5.027 9.013-5.46-9.074-.006-.01c-.216-.34-.264-.577-.264-.724 0-.23.11-.488.48-.796.379-.316.93-.594 1.56-.83l.648-.243V11.56h-16.7v3.826l.841.135c.184.03.36.053.535.077.561.074 1.09.145 1.686.398.718.304 1.544.896 2.325 2.234l9.02 15.474v5.778c0 .876-.449 1.469-1.19 1.938-.774.49-1.764.765-2.572.952l-.775.178v3.77h16.7v-3.81l-.823-.148c-1.034-.186-1.916-.431-2.532-.864-.542-.38-.929-.935-.929-1.974v-5.838l7.608-14.142c.962-1.782 1.773-2.64 2.463-3.127.58-.409 1.102-.588 1.762-.815.153-.053.313-.108.483-.169l.662-.237Z"/>
-					<path d="m9.577 20.153 17.182 27.006c4.77 7.489 10.243 14.097 18.568 14.097 3.509 0 6.232-1.361 8.077-3.148 1.812-1.755 2.835-3.984 2.835-5.79 0-.981-.356-1.866-1.01-2.506-.653-.637-1.543-.972-2.51-.972-1.075 0-1.97.356-2.649.975-.662.605-1.059 1.406-1.261 2.218-.158.63-.271 1.216-.371 1.731v.002l-.035.178c-.11.564-.204 1.019-.328 1.414-.26.713-1.059 1.378-3.084 1.378-.752 0-1.887-.575-3.352-2.015-1.416-1.392-2.965-3.418-4.54-5.904l-6.186-9.792V17.936c0-.72.392-1.243 1.114-1.68.744-.451 1.688-.707 2.429-.872l.783-.174v-3.692H21.94v3.794l.804.16a5.25 5.25 0 0 1 1.868.845c.661.485 1.066 1.07 1.066 1.787v12.619L13.623 11.56H.101v3.805l.817.152c.873.163 1.747.407 2.386.832.584.388.955.906.955 1.755v21.42c0 .781-.367 1.346-.994 1.8-.656.475-1.55.783-2.406.958l-.8.164v3.874h13.55v-3.81l-.774-.18c-.918-.213-1.733-.442-2.329-.878-.518-.379-.929-.958-.929-2.096V20.153Z"/>
-				</svg>				
-			</span>
-			<span>shaping</span>
-			<a href="/"><span>01↗</span>brand</a>
-			<span>experiences across</span>
-			<a href="/"><span>02↗</span>physical</a>
-			<span>&amp;</span>
-			<a href="/"><span>03↗</span>digital</a>
-		</div>
-		<div class="current"><p>currently associate creative director & competitive cold brew drinker @</p></div>
-		<div class="hero--contact container-grid">
-			<div class="hero--contact-socials">
-				<ul>
-					<li><LinkFlip linkurl="https://www.instagram.com/_isthatjeff" className='contact--socials-link' external aria-label="Instagram"><Instagram /></LinkFlip></li>
-					<li>/</li>
-					<li><LinkFlip linkurl="https://www.linkedin.com/in/jeffrey-herrera" className='contact--socials-link' external aria-label="LinkedIn"><LinkedIn /></LinkFlip></li>
-					<li>/</li>
-					<li><LinkFlip linkurl="mailto:herrera.jeffrey@gmail.com" className='contact--socials-link' external aria-label="Email"><Mail /></LinkFlip></li>
-				</ul>
-			</div>
-			<div id="email-copy" class="hero--contact-email">
-				<LinkFlip className='link contact--email-link' isButton>COPY EMAIL <Copy /></LinkFlip>
-				<div id="customAlert" class="hidden"></div>
-			</div>
-		</div>
-	</div>
 	<main>
+		<div class="container hero--container">
+			<div class="headline">
+				<span>I'm Jeff,</span>
+				<div class="hero--pill about"><Picture src={Portrait} width="300" alt="Portrait of Jeffrey Herrera" loading="eager" /></div>
+				<span>a creative director from</span>
+				<span class="hero--pill nyc">
+					<svg xmlns="http://www.w3.org/2000/svg" width="101" height="62" fill="currentColor" viewBox="0 0 101 62">
+						<path fill-rule="evenodd" d="M26.995 1.206 23.629.918l-.16.898c-.088.49-.25.88-.459 1.128-.178.213-.416.358-.825.358-.303 0-.659-.102-1.127-.335-.375-.187-.752-.42-1.192-.69-.123-.076-.25-.155-.384-.236C18.314 1.33 16.815.488 14.919.488c-1.927 0-3.33.884-4.254 2.162-.895 1.236-1.329 2.811-1.486 4.275l-.11 1.01 3.198.291.244-.763c.151-.471.327-.825.535-1.052.176-.191.387-.311.739-.311.344 0 .736.11 1.228.347.426.206.859.47 1.358.774l.265.162c1.165.707 2.655 1.573 4.457 1.573 1.99 0 3.433-.966 4.369-2.307.91-1.304 1.344-2.953 1.458-4.455l.075-.988Z" clip-rule="evenodd"/>
+						<path d="m100.6 35.362-4.793-1.268-.234 1.002c-.35 1.496-1.17 3.475-2.578 5.06-1.388 1.563-3.334 2.736-6.025 2.736-2.332 0-4.19-.977-5.51-2.988-1.357-2.065-2.183-5.287-2.183-9.788 0-5.98.82-9.62 2.134-11.743.642-1.04 1.4-1.711 2.252-2.132.86-.426 1.873-.623 3.056-.623 3.2 0 6.55 2.6 8.974 5.968l.507.705 3.343-1.752-3.883-9.357h-2.92l-.99.957c-1.076-.594-2.92-1.293-5.746-1.293-4.787 0-8.639 2.038-11.267 5.474-2.609 3.41-3.97 8.137-3.97 13.502 0 5.875 1.777 10.353 4.69 13.368 2.911 3.013 6.87 4.474 11.052 4.474 4.337 0 7.53-1.553 9.781-3.787 2.23-2.212 3.488-5.043 4.085-7.567l.225-.948ZM72.79 15.196V11.56H58.61v3.818l.782.174c.505.112 1.354.377 2.051.781.76.442.988.835.988 1.1 0 .108-.033.284-.137.5l-5.027 9.013-5.46-9.074-.006-.01c-.216-.34-.264-.577-.264-.724 0-.23.11-.488.48-.796.379-.316.93-.594 1.56-.83l.648-.243V11.56h-16.7v3.826l.841.135c.184.03.36.053.535.077.561.074 1.09.145 1.686.398.718.304 1.544.896 2.325 2.234l9.02 15.474v5.778c0 .876-.449 1.469-1.19 1.938-.774.49-1.764.765-2.572.952l-.775.178v3.77h16.7v-3.81l-.823-.148c-1.034-.186-1.916-.431-2.532-.864-.542-.38-.929-.935-.929-1.974v-5.838l7.608-14.142c.962-1.782 1.773-2.64 2.463-3.127.58-.409 1.102-.588 1.762-.815.153-.053.313-.108.483-.169l.662-.237Z"/>
+						<path d="m9.577 20.153 17.182 27.006c4.77 7.489 10.243 14.097 18.568 14.097 3.509 0 6.232-1.361 8.077-3.148 1.812-1.755 2.835-3.984 2.835-5.79 0-.981-.356-1.866-1.01-2.506-.653-.637-1.543-.972-2.51-.972-1.075 0-1.97.356-2.649.975-.662.605-1.059 1.406-1.261 2.218-.158.63-.271 1.216-.371 1.731v.002l-.035.178c-.11.564-.204 1.019-.328 1.414-.26.713-1.059 1.378-3.084 1.378-.752 0-1.887-.575-3.352-2.015-1.416-1.392-2.965-3.418-4.54-5.904l-6.186-9.792V17.936c0-.72.392-1.243 1.114-1.68.744-.451 1.688-.707 2.429-.872l.783-.174v-3.692H21.94v3.794l.804.16a5.25 5.25 0 0 1 1.868.845c.661.485 1.066 1.07 1.066 1.787v12.619L13.623 11.56H.101v3.805l.817.152c.873.163 1.747.407 2.386.832.584.388.955.906.955 1.755v21.42c0 .781-.367 1.346-.994 1.8-.656.475-1.55.783-2.406.958l-.8.164v3.874h13.55v-3.81l-.774-.18c-.918-.213-1.733-.442-2.329-.878-.518-.379-.929-.958-.929-2.096V20.153Z"/>
+					</svg>				
+				</span>
+				<span>shaping</span>
+				<a href="/"><span>01↗</span>brand</a>
+				<span>experiences across</span>
+				<a href="/"><span>02↗</span>physical</a>
+				<span>&amp;</span>
+				<a href="/"><span>03↗</span>digital</a>
+			</div>
+			<div class="current"><p>currently associate creative director & competitive cold brew drinker @</p></div>
+			<div class="hero--contact container-grid">
+				<div class="hero--contact-socials">
+					<ul>
+						<li><LinkFlip linkurl="https://www.instagram.com/_isthatjeff" className='contact--socials-link' external aria-label="Instagram"><Instagram /></LinkFlip></li>
+						<li>/</li>
+						<li><LinkFlip linkurl="https://www.linkedin.com/in/jeffrey-herrera" className='contact--socials-link' external aria-label="LinkedIn"><LinkedIn /></LinkFlip></li>
+						<li>/</li>
+						<li><LinkFlip linkurl="mailto:herrera.jeffrey@gmail.com" className='contact--socials-link' external aria-label="Email"><Mail /></LinkFlip></li>
+					</ul>
+				</div>
+				<div id="email-copy" class="hero--contact-email">
+					<LinkFlip className='link contact--email-link' isButton>COPY EMAIL <Copy /></LinkFlip>
+					<div id="customAlert" class="hidden"></div>
+				</div>
+			</div>
+		</div>
 	</main>
 </Layout>
 
@@ -97,8 +97,7 @@ import LinkFlip from '../components/LinkFlip.astro';
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		/* transition: var(--transition); */
-		color: var(--clr-amber-50);
+		color: var(--clr-amber-100);
 		background-color: var(--clr-amber-400);
 	}
 	.nyc svg {
@@ -106,10 +105,6 @@ import LinkFlip from '../components/LinkFlip.astro';
 		transform-origin: center;
 		transition: all 350ms ease;
 		transform: scale(1) rotate(0);
-	}
-	.nyc:hover {
-		background-color: var(--clr-amber-50);
-		color: var(--clr-stone-950);
 	}
 	.nyc:hover svg {
 		transform: scale(1.9) rotate(-7deg);
